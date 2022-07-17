@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    justify-items: center;
+}
+
+.header__left>img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+
+.header__navlist {
+    padding: 10px;
+}

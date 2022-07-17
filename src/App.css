@@ -1,0 +1,37 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    background: #f4f4f8;
+    overflow-x: hidden;
+}
+
+.app__header {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app__body {
+    position: relative;
+    top: 70px;
+}
+
+
+.button-block {
+    width: 100%;
+}
+
+.login-background {
+    justify-content: center;
+    max-height: 400px;
+    min-height: 30vh;
+    padding: 50px;
+    width: 500px;
+    min-width: 350px;
+    margin-top: 80px;
+    margin-left: 80px;
+}
