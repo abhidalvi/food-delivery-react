@@ -9,7 +9,11 @@ import styled from 'styled-components';
 import { MenuItem } from '@mui/material';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { toggleCart } from '../../features/ui/uiSlice';
-
+import HomeIcon from '@mui/icons-material/Home';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import PersonIcon from '@mui/icons-material/Person';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function Header() {
 
@@ -37,11 +41,26 @@ function Header() {
       </Logo>
 
       <NavMenu>
-        <MenuItem component={Link} to={'/'}>Home</MenuItem>
-        <MenuItem component={Link} to={'/AboutUs'}>About Us</MenuItem>
-        <MenuItem component={Link} to={'/profile'}>Profile</MenuItem>
-        <MenuItem component={Link} to={'/orders'}>Orders</MenuItem>
-        <MenuItem onClick={LogOut}>Log Out</MenuItem>
+        <MenuItem component={Link} to={'/'}>
+          <span><HomeIcon /></span>
+          <h2>Home</h2>
+        </MenuItem>
+        <MenuItem component={Link} to={'/AboutUs'}>
+          <span><ContactMailIcon /></span>
+          <h2>About Us</h2>
+        </MenuItem>
+        <MenuItem component={Link} to={'/profile'}>
+          <span><PersonIcon /></span>
+          <h2>Profile</h2>
+        </MenuItem>
+        <MenuItem component={Link} to={'/orders'}>
+          <span><HistoryEduIcon /></span>
+          <h2>Orders</h2>
+        </MenuItem>
+        <MenuItem onClick={LogOut}>
+          <span><LogoutIcon /></span>
+          <h2>Log Out</h2>
+        </MenuItem>
       </NavMenu>
 
 
@@ -76,8 +95,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
-  letter-spacing: 16px;
   z-index: 3;
+
+  @media (max-width: 710px) {
+    padding: 0px;
+    padding-right:12px;
+  }
 `;
 
 const Logo = styled.a`
@@ -90,6 +113,11 @@ const Logo = styled.a`
     width: 100%;
     object-fit:cover;
   }
+
+  @media (max-width: 710px) {
+    display:none;
+  }
+
 `;
 
 const NavMenu = styled.div`
@@ -106,7 +134,16 @@ const NavMenu = styled.div`
   Link{
     text-decoration:none;
   }
-    
+  span{
+    display:flex;
+    flex-direction:column;
+
+    h5{
+      font-size:10px;
+    }
+  }
+  
+
     &:hover {
       span:before {
         transform: scaleX(1);
@@ -114,7 +151,19 @@ const NavMenu = styled.div`
         opacity: 1 !important;
       }
     }
-  }
+ 
+
+    @media (min-width: 700px) {
+      span{
+        display:none;
+      }
+    }
+    @media (max-width: 710px) {
+      margin-left:3px;
+      h2{
+        display:none;
+      }
+    }
 `;
 
 const Cart = styled.div`
@@ -135,16 +184,17 @@ div{
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -8px;
+  right: -10px;
   top: -4px;
   
 
   p{
     font-weight: 500;
     color:#f4f4f8;
-    margin-left:14px;
     margin-bottom:3px;
   }
 }
+
+
 `;
 export default Header

@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import './App.css';
-import Login from './components/Login';
+import Login from './components/Auth/Login';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutUs from './components/AboutUs'
@@ -11,7 +11,7 @@ import { login, logout, selectUser } from './features/user/userSlice';
 import { useDispatch } from 'react-redux/es/exports';
 import PrivateRoute from './PrivateRoute'
 import Profile from './components/Profile';
-import Signin from './components/Signin';
+import Signin from './components/Auth/Signin';
 import Orders from './components/Orders/Orders';
 import Cart from './components/Cart/Cart';
 

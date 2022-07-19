@@ -16,7 +16,10 @@ function AboutUs() {
                 {/* <img src={profile} alt="" /> */}
                 <h2>Abhishek Dalvi</h2>
                 <h3>
-                    📱 8828763406• ✉ adalvi2588@gmail.com
+                    <span>📱</span> 8828763406
+                </h3>
+                <h3>
+                    <span>✉</span> adalvi2588@gmail.com
                 </h3>
                 <h4>
                     linkedin.com/in/dalvi-abhishek
@@ -30,7 +33,7 @@ function AboutUs() {
 const ProfileCard = styled.div`
 display:flex;
 flex-direction:column;
-margin:70px 50px 0 50px;
+margin:70px 40px 0 40px;
 padding:30px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
 

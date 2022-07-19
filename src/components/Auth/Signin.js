@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleSignIn } from '../features/ui/uiSlice'
-import { login } from '../features/user/userSlice';
-import { auth, db } from '../firebase';
+import { toggleSignIn } from '../../features/ui/uiSlice'
+import { login } from '../../features/user/userSlice';
+import { auth, db } from '../../firebase';
 import './Signin.css'
 import { Navigate } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../../images/logo.png'
 
 function Signin() {
 
@@ -83,6 +84,9 @@ function Signin() {
                         onClick={SignIn}>Continue</button>
 
                 </Container>
+                <ImgContainer>
+                    <img src={logo} alt="" />
+                </ImgContainer>
 
             </div>
 
@@ -105,14 +109,14 @@ display:flex;
 flex-direction:column;
 margin-top:20px;
 justify-content:center;
-
+width: 80%;
 h2{
     font-size: 30px; 
     color:#2a2c41; 
 }
 
 input{
-    width:350px;
+    width:300px;
     height: 50px;
     font-size: 20px;
     padding:15px;
@@ -122,7 +126,7 @@ input{
 }
 
 button{
-    width:350px;
+    width:300px;
     height: 50px;
     margin-top:10px;
     font-size: 20px;
@@ -140,6 +144,34 @@ h4{
     margin-top:10px;
     font-size:15px;
 }
+
+@media (max-width: 768px) {
+    input{
+        width:100%;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+
+
 `;
 
+const ImgContainer = styled.div`
+@media (max-width: 1199px) {
+    img{
+        display:none;
+    }
+}
+@media (min-width: 1200px) {
+    img{
+        height:100%;
+        width:100%;
+        object-fit:contain;
+    }
+}
+
+`;
 export default Signin

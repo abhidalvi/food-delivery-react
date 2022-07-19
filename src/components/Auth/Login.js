@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { login, selectUser } from '../features/user/userSlice';
-import { auth, db } from '../firebase';
+import { login, selectUser } from '../../features/user/userSlice';
+import { auth, db } from '../../firebase';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { Navigate } from 'react-router-dom';
 import styled from 'styled-components';
-import logo from '../images/logo.png'
-import { toggleSignIn } from '../features/ui/uiSlice'
+import logo from '../../images/logo.png'
+import { toggleSignIn } from '../../features/ui/uiSlice'
 
 
 function Login() {
@@ -144,7 +144,8 @@ const LeftSide = styled.div`
                         width:30%;
                         min-width:300px;
                         padding:35px;
-                        margin:100px 300px 200px 50px;
+                        height:50%;
+                        margin: 5%;
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                                                 
                         h2{
@@ -182,6 +183,10 @@ const LeftSide = styled.div`
                          h4{
                         margin-top:10px;
                         font-size:15px;
+                        }
+
+                        @media (max-width: 768px) {
+                            margin:50px 80px 200px 20px;
                         }
                         `;
 

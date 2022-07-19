@@ -11,14 +11,14 @@ function OrderCard({ items }) {
             {user &&
                 <OuterCard>
                     <RightCard>
-                        <h4>Order Id: #{items.id}</h4>
+                        <h4>Order Id: #{items.id.substring(0, 5)}</h4>
                         <h3>Delivered At: {user.address}</h3>
                         <Items>
                             {items.data.item_ids &&
                                 items.data.item_ids.map((item) => {
                                     return (
                                         <>
-                                            <h4> {item.name}<span> x </span>{item.quantity} ∙ </h4>
+                                            <h4> ∙{item.name}<span> x </span>{item.quantity}∙</h4>
                                         </>
 
                                     )
@@ -59,7 +59,8 @@ h3{
 }
 `;
 const Items = styled.div`
-display:flex;
+display:grid;
+grid-template-rows:1fr;
 margin:10px 0px 10px 0px;
 h4{
     font-size:13px;

@@ -24,8 +24,9 @@ function Home() {
         }
     }
     useEffect(() => {
+        console.log('hii')
         user &&
-            db.collection("users")
+            (db.collection("users")
                 .onSnapshot((snapshot) => {
                     snapshot.docs.map((doc) => {
                         if (doc.data().userid === user.uid) {
@@ -36,10 +37,12 @@ function Home() {
                                 address: doc.data().address,
                                 phoneNumber: doc.data().phoneNumber,
                             }))
+
                         }
                     });
 
                 })
+            )
     }, [])
 
     return (

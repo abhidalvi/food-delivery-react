@@ -21,8 +21,9 @@ function Profile() {
                     <img src={profile} alt="" />
                     <h2>{user.displayName}</h2>
                     <h3>
-                        {user.phoneNumber} • {user.email}
+                        {user.phoneNumber}
                     </h3>
+                    <h3> {user.email}</h3>
                     <h4>
                         {user.address}
                     </h4>
@@ -55,6 +56,8 @@ h3{
     font-size:20px;
     color: #2a2c41
 }
+
+
 `;
 
 export default Profile

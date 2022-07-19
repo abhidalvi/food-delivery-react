@@ -138,7 +138,7 @@ const Container = styled.div`
   margin-top: 100px;
   margin-left:55px;
   margin-right:30px;
-  padding: 20px 0px 20px;
+  padding: 20px 0px 16px;
   display: grid;
   grid-gap: 20px;
   gap: 25px;
