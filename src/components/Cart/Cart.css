@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     z-index: 2;
-    width: 600px;
+    width: 50%;
     height: 100vh;
     padding: 60px 12px 0;
     background: #f4f4f8;
@@ -151,4 +151,12 @@
 
 .checkOutButton:hover {
     background: #ff724c;
+}
+
+
+@media (max-width: 768px) {
+
+    .cartContainer {
+        width: 95%;
+    }
 }
